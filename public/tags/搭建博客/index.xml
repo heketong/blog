@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>搭建博客 on Pure theme for Hugo</title>
+    <link>http://heketong.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 搭建博客 on Pure theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 13 May 2020 22:45:46 +0800</lastBuildDate>
+    
+        <atom:link href="http://heketong.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>create_hugo_blog</title>
+      <link>http://heketong.github.io/2020/05/create_hugo_blog/</link>
+      <pubDate>Wed, 13 May 2020 22:45:46 +0800</pubDate>
+      
+      <guid>http://heketong.github.io/2020/05/create_hugo_blog/</guid>
+      <description>搭建hugo静态博客记录 1 安装Hugo 我这里是imac所以就直接用brew 其它操作系统也很简单 百度一下一把 brew install hugo 2 初始化站点目录 先cd到你想</description>
+    </item>
+    
+    <item>
+      <title>Helloworld</title>
+      <link>http://heketong.github.io/2020/05/helloworld/</link>
+      <pubDate>Wed, 13 May 2020 22:45:46 +0800</pubDate>
+      
+      <guid>http://heketong.github.io/2020/05/helloworld/</guid>
+      <description>little miss 1little miss 2little miss 3little miss 4little miss 5little miss 6little miss 7little miss 8little miss 9little miss 10little miss 11little miss 1little miss 12little miss 13little miss 14little miss 15little miss 16little miss 17little miss 18little miss 19little miss 20little miss 21little miss 22little miss 23little miss 24little miss 25little miss 26little miss 27little miss 28little miss 29little miss 30little miss 31little miss 32little miss 33little miss</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>http://heketong.github.io/about/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://heketong.github.io/about/</guid>
+      <description>常用邮箱 18929579649@163.com 欢迎骚扰 想说的话: 每个不曾起舞的日子，都是对生命的辜负 特别喜欢这个翻译 像疯子一样追求自己的梦想，遇到不开心也希望自己无比淡定 多向小</description>
+    </item>
+    
+  </channel>
+</rss>
