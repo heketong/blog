@@ -1,30 +1,27 @@
-name: Hugo Build and Deploy
-
+name: CI #自动化的名称
 on:
-  push:
-    branches:
+  push: # push的时候触发
+    branches: # 那些分支需要触发
       - master
-
 jobs:
-  build-deploy:
-    runs-on: ubuntu-18.04
+  build:
+    runs-on: ubuntu-latest # 镜像市场
     steps:
-      - uses: actions/checkout@v1  # v2 does not have submodules option now
-        with:
+      - name: checkout # 步骤的名称
+        uses: actions/checkout@master #软件市场的名称
+        with: # 参数
           submodules: true
-
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v2.2.2
         with:
           hugo-version: '0.59.1'
-
+          extended: true
       - name: Build
         run: hugo --minify
-
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: heketong/heketong.github.io
-          publish_dir: ./public
-          publish_branch: master
+        uses: peaceiris/actions-gh-pages@v2.5.1
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          EXTERNAL_REPOSITORY: heketong/heketong.github.io
+          PUBLISH_BRANCH: master
+          PUBLISH_DIR: ./public
