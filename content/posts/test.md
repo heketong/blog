@@ -5,5 +5,5 @@ tags: ["test"]
 categories: ["test"]
 ---
 
-<img src="donate/aaa.jpg" style="zoom:25%;" />
+<img src="http://heketong.github.io/donate/aaa.jpg" style="zoom:25%;" />
 test
