@@ -5,5 +5,5 @@ tags: ["test"]
 categories: ["test"]
 ---
 
-<img src="img/aaa.jpg" style="zoom:25%;" />
+<img src="donate/aaa.jpg" style="zoom:25%;" />
 test
