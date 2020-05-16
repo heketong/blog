@@ -20,12 +20,12 @@
     </item>
     
     <item>
-      <title>Helloworld</title>
-      <link>http://heketong.github.io/2020/05/helloworld/</link>
+      <title>电子书分享1(请勿滥用)）</title>
+      <link>http://heketong.github.io/2020/05/ebook_1/</link>
       <pubDate>Wed, 13 May 2020 22:45:46 +0800</pubDate>
       
-      <guid>http://heketong.github.io/2020/05/helloworld/</guid>
-      <description>little miss 1little miss 2little miss 3little miss 4little miss 5little miss 6little miss 7little miss 8little miss 9little miss 10little miss 11little miss 1little miss 12little miss 13little miss 14little miss 15little miss 16little miss 17little miss 18little miss 19little miss 20little miss 21little miss 22little miss 23little miss 24little miss 25little miss 26little miss 27little miss 28little miss 29little miss 30little miss 31little miss 32little miss 33little miss</description>
+      <guid>http://heketong.github.io/2020/05/ebook_1/</guid>
+      <description>趁着github_pages搭建起来了，就把之前手上的一些电子书分享出来了. 目前都存在城通网盘里面的，会员到期后可能考虑转到百度网盘。 也不想</description>
     </item>
     
     <item>
@@ -35,6 +35,15 @@
       
       <guid>http://heketong.github.io/about/</guid>
       <description>常用邮箱 18929579649@163.com 欢迎骚扰 想说的话: 每个不曾起舞的日子，都是对生命的辜负 特别喜欢这个翻译 像疯子一样追求自己的梦想，遇到不开心也希望自己无比淡定 多向小</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://heketong.github.io/1/01/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://heketong.github.io/1/01/test/</guid>
+      <description></description>
     </item>
     
   </channel>

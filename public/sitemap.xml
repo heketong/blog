@@ -17,13 +17,6 @@
   </url>
   
   <url>
-    <loc>http://heketong.github.io/2020/05/helloworld/</loc>
-    <lastmod>2020-05-13T22:45:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://heketong.github.io/posts/</loc>
     <lastmod>2020-05-13T22:45:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -52,6 +45,27 @@
   </url>
   
   <url>
+    <loc>http://heketong.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/</loc>
+    <lastmod>2020-05-13T22:45:46+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://heketong.github.io/categories/%E7%94%B5%E5%AD%90%E4%B9%A6/</loc>
+    <lastmod>2020-05-13T22:45:46+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://heketong.github.io/2020/05/ebook_1/</loc>
+    <lastmod>2020-05-13T22:45:46+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://heketong.github.io/</loc>
     <lastmod>2020-05-13T22:45:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -63,6 +77,11 @@
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://heketong.github.io/1/01/test/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
