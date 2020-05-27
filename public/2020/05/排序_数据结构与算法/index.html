@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        排序_数据结构与算法 - 疯子爱淡定
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="冒泡排序 介绍 ​ 冒泡排序是一种比较简单的排序，之所以叫冒泡，是因为在两两比较的过程中较大的数就像冒泡一样被换到后面。详细解释：依次比较相邻的两" />
+    <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+    <title>排序_数据结构与算法 - 疯子爱淡定</title>
+    
+    
+    <link rel="stylesheet" href="http://heketong.github.io/css/style.min.4f147d36519115ced51ecc00535cc74c2890d9ec1818ce30efa4e08cd443285e.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="排序_数据结构与算法" />
+<meta property="og:description" content="冒泡排序 介绍 ​ 冒泡排序是一种比较简单的排序，之所以叫冒泡，是因为在两两比较的过程中较大的数就像冒泡一样被换到后面。详细解释：依次比较相邻的两" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://heketong.github.io/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" />
+<meta property="article:published_time" content="2020-05-13T22:45:46+08:00" />
+<meta property="article:modified_time" content="2020-05-13T22:45:46+08:00" />
+<meta itemprop="name" content="排序_数据结构与算法">
+<meta itemprop="description" content="冒泡排序 介绍 ​ 冒泡排序是一种比较简单的排序，之所以叫冒泡，是因为在两两比较的过程中较大的数就像冒泡一样被换到后面。详细解释：依次比较相邻的两">
+
+
+<meta itemprop="datePublished" content="2020-05-13T22:45:46&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-13T22:45:46&#43;08:00" />
+<meta itemprop="wordCount" content="4270">
+
+
+
+<meta itemprop="keywords" content="数据结构,算法,排序," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="排序_数据结构与算法"/>
+<meta name="twitter:description" content="冒泡排序 介绍 ​ 冒泡排序是一种比较简单的排序，之所以叫冒泡，是因为在两两比较的过程中较大的数就像冒泡一样被换到后面。详细解释：依次比较相邻的两"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="http://heketong.github.io/" target="_blank">
+            <img class="img-circle img-rotate" src="http://heketong.github.io/donate/heketong_profile_photo.JPG" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">heketong</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">程序猿</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>guangzhou, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">技术总结</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>每个不曾起舞的日子,都是对生命的辜负</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="http://heketong.github.io/categories/test/" class="category-list-link">test</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="http://heketong.github.io/categories/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/" class="category-list-link">技术总结</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="http://heketong.github.io/tags/test/" class="tag-list-link">test</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="http://heketong.github.io/tags/%E6%8E%92%E5%BA%8F/" class="tag-list-link">排序</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="http://heketong.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="tag-list-link">搭建博客</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="http://heketong.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="tag-list-link">数据结构</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="http://heketong.github.io/tags/%E7%AE%97%E6%B3%95/" class="tag-list-link">算法</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="http://heketong.github.io/2020/05/create_hugo_blog/" class="title">create_hugo_blog</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-05-13 22:45:46 &#43;0800 CST" itemprop="datePublished">2020-05-13</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="http://heketong.github.io/2020/05/test/" class="title">test</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-05-13 22:45:46 &#43;0800 CST" itemprop="datePublished">2020-05-13</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="http://heketong.github.io/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="title">排序_数据结构与算法</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-05-13 22:45:46 &#43;0800 CST" itemprop="datePublished">2020-05-13</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse in" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"
+    >排序_数据结构与算法</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="http://heketong.github.io/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2020-05-13 22:45:46 &#43;0800 CST" itemprop="datePublished">2020-05-13</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/"> 技术总结 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"> 数据结构 </a>
+    <a class="article-tag-link" href="/tags/%E7%AE%97%E6%B3%95/"> 算法 </a>
+    <a class="article-tag-link" href="/tags/%E6%8E%92%E5%BA%8F/"> 排序 </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="http://heketong.github.io/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="leancloud_visitors"  data-flag-title="排序_数据结构与算法">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4270字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      
+
+<h1 id="冒泡排序">冒泡排序</h1>
+
+<h2 id="介绍">介绍</h2>
+
+<p>​    冒泡排序是一种比较简单的排序，之所以叫冒泡，是因为在两两比较的过程中较大的数就像冒泡一样被换到后面。详细解释：依次比较相邻的两个数，前面的数大于后面的数，则交换，将较大的数挪动到后面</p>
+
+<ul>
+<li>第1轮: 比较1 &ndash; N         经过依次相邻两两比较交换 最大的数则放到了最后</li>
+<li>第2轮: 比较1 &ndash;N-1       经过依次相邻两两比较交换 第2大的数则放到了N-1的位置</li>
+<li>第N-1轮:比较1 &ndash;  2       前2个数两两比较交换     整个过程完成</li>
+</ul>
+
+<h2 id="代码">代码</h2>
+
+<p><details>
+  <summary>BubbleSort</summary></p>
+
+<pre><code class="language-go">func BubbleSort(a []int) {
+	if len(a) &lt; 2 { //一个数或者为空 不用排序
+		return
+	}
+	//外层循环控控制每轮循环两两比较的最大下标 第1次为N-1 最后一次为1(也就是最前面的2个元素)
+	for endPos := len(a) - 1; endPos &gt; 0; endPos-- {
+		//内层循环完成两两比较交换
+		for i := 0; i &lt; endPos; i++ {
+			if a[i] &gt; a[i+1] {
+				a[i], a[i+1] = a[i+1], a[i]
+			}
+		}
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="时间复杂度">时间复杂度</h2>
+
+<p>​    O($N^2$)</p>
+
+<h2 id="稳定性">稳定性</h2>
+
+<p>​    <strong>稳定</strong> 因为如果2个数相等 则他们的相对位置 并没有发生改变</p>
+
+<h2 id="优化">优化</h2>
+
+<p>​    看内层循环 如果并没有发生数据交换 则证明所有数据已经排序完成，这个时候直接结束即可 加一个标志判断即可</p>
+
+<p><details>
+<summary>BubbleSortOpt</summary></p>
+
+<pre><code class="language-go">func BubbleSort(a []int) {
+	if len(a) &lt; 2 { //一个数或者为空 不用排序
+		return
+	}
+	isChg := false
+	//外层循环控控制每轮循环两两比较的最大下标 第1次为N-1 最后一次为1(也就是最前面的2个元素)
+	for endPos := len(a) - 1; endPos &gt; 0; endPos-- {
+		//内层循环完成两两比较交换
+		for i := 0; i &lt; endPos; i++ {
+			if a[i] &gt; a[i+1] {
+				a[i], a[i+1] = a[i+1], a[i]
+				isChg = true
+			}
+		}
+		if !isChg { //如果内层循环没有发生数据交换 则表明所有数据都已经排序完成 直接退出循环即可
+			break
+		}
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="网搜图解">网搜图解</h2>
+
+<p><img src="donate/bubbleSort.gif" alt="" /></p>
+
+<p>​   摘自: <a href="https://www.cnblogs.com/onepixel/p/7674659.html">https://www.cnblogs.com/onepixel/p/7674659.html</a></p>
+
+<h1 id="插入排序">插入排序</h1>
+
+<h2 id="介绍-1">介绍</h2>
+
+<p>​    插入排序顾名思义就是将一个待排序的元素，插入到一组已经排好序的元素中，如果形象比喻下，可以想象一下打牌，拿起来第一张牌自然就是排好序的，拿起第二张则跟第一张进行比较，插入到合适的位置。接下来拿第三张 跟前面2张已经排好序的比较，插入合适的位置，依次类推，拿完所有的牌，顺序自然也排好了。</p>
+
+<p>​    将待排序的元素分为有序区和无序区，按照顺序每次从无序区拿一个元素，插入插入到有序区，直到所有无序区的元素都插入有序区，整个排序过程结束。第一次有序区为第1个元素，无序区为第2&mdash;N个元素，拿出第2个元素插入到有序区。</p>
+
+<h2 id="代码-1">代码</h2>
+
+<p><details>
+<summary>InsertSort</summary></p>
+
+<pre><code class="language-go">func InsertSort(a []int) {
+	if len(a) &lt; 2 { //一个数或者为空 不用排序
+		return
+	}
+  //j为无序区的第一个元素 对应下标从1开始，每次后移一个位置
+	for j := 1; j &lt; len(a); j++ {
+    //内层循环完成比较插入 倒序依次跟有序区的元素进行比较，如果小于有序区的元素 则交换
+		for i := j; i &gt; 0; i-- {
+			if a[i] &lt; a[i-1] {
+				a[i], a[i-1] = a[i-1], a[i]
+			}
+		}
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="时间复杂度-1">时间复杂度</h2>
+
+<p>​    O($N^2$)</p>
+
+<h2 id="算法稳定性">算法稳定性</h2>
+
+<p>​    <strong>稳定</strong> 没有改变两个相等元素的相对位置</p>
+
+<h2 id="优化-1">优化</h2>
+
+<p>​    上面代码内层循环在查找待插入位置时是倒序逐个比较的，在查找待插入位置时候是可以优化的，<strong>采用二分查找可以有效减少比较次数</strong>，但<strong>优化后的插入算法则变为不稳定的</strong></p>
+
+<p><details>
+<summary>InsertSortOpt</summary></p>
+
+<pre><code class="language-go">//BinSerachInsertIndex 二分查找在a数组 begin到end区间 key元素的插入位置
+func BinSerachInsertIndex(a []int, begin int, end int, key int) int {
+	pos := -1 //需要插入的位置
+	for begin &lt;= end {
+		mid := begin + (end-begin)/2
+		if a[mid] == key { //如果等于key 则找到位置
+			pos = mid + 1
+			break
+		} else if a[mid] &lt; key {
+			begin = mid + 1
+		} else {
+			end = mid - 1
+		}
+	}
+	if pos == -1 {
+		pos = begin
+	}
+	return pos
+}
+func InsertSortOpt(a []int) {
+	if len(a) &lt; 2 { //一个数或者为空 不用排序
+		return
+	}
+	// for j := 1; j &lt; len(a); j++ {
+	// 	for i := j; i &gt; 0; i-- {
+	// 		if a[i] &lt; a[i-1] {
+	// 			a[i], a[i-1] = a[i-1], a[i]
+	// 		}
+	// 	}
+	// }
+	//优化后
+	for j := 1; j &lt; len(a); j++ {
+		begin, end, key := 0, j-1, a[j]
+		//找到插入的位置
+		pos := BinSerachInsertIndex(a, begin, end, key)
+		//将pos到end区间的元素逐个后移
+		for index := j; index &gt; pos; index-- {
+			a[index] = a[index-1]
+		}
+		//插入待排序元素
+		a[pos] = key
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="网搜图解-1">网搜图解</h2>
+
+<p><img src="donate/insertSort.gif" alt="" /></p>
+
+<p>​   摘自:<a href="https://www.cnblogs.com/onepixel/p/7674659.html">https://www.cnblogs.com/onepixel/p/7674659.html</a></p>
+
+<h1 id="归并排序">归并排序</h1>
+
+<h2 id="介绍-2">介绍</h2>
+
+<p>​   MergeSort 合并两个有序的序列为1的大的有序的序列，最典型的归并排序可以分2个大的步骤：</p>
+
+<p>1 采用递归思想 将一个大的序列:二分为大致平均的子序列，然后针对每个子序列都再递归二分(最后每个子序列长度都为1)</p>
+
+<p>2 两两子序列合并为有序序列 直到所有子序列合并完成</p>
+
+<p>​   整体归并排序也用到了很重要的分治思想，也就是将大的问题分为小的问题 逐个解决</p>
+
+<p><img src="donate/mergeSort.png" style="zoom:100%;" /></p>
+
+<h2 id="代码-2">代码</h2>
+
+<p><details>
+<summary>MergeSort</summary></p>
+
+<pre><code class="language-go">  func MergeSort(a []int, left int, right int) {
+	//校验
+	if len(a) &lt; 2 || left &lt; 0 || right &gt; len(a) || left &gt;= right {
+		return
+	}
+	mid := left + (right-left)/2    //数组中间位置
+	MergeSort(a, left, mid)         //左边归并排序
+	MergeSort(a, mid+1, right)      //右边递归排序
+	MergeSlice(a, left, mid, right) //合并2个子序列为大的有序序列
+}
+func MergeSlice(a []int, left int, mid int, right int) {
+	//先生成1个辅助空间 长度 容量都是right-left+1
+	help := make([]int, right-left+1, right-left+1)
+	helpIndex := 0 //help数组起始位置  填入一个数值 往后移动一位
+	//定义2个下标 开始分别指向2个子区间的最开始位置 然后逐个遍历
+	LIndex := left
+	RIndex := mid + 1
+	for LIndex &lt;= mid &amp;&amp; RIndex &lt;= right {
+		if a[LIndex] &lt;= a[RIndex] { //左边区间数值较小 左边进辅助空间
+			help[helpIndex] = a[LIndex]
+			LIndex++
+		} else {
+			help[helpIndex] = a[RIndex]
+			RIndex++
+		}
+		helpIndex++ //不管左边区间进辅助还是右边区间 辅助数组下标下移一个位置 因为必定进了一个数
+	}
+	for LIndex &lt;= mid { 
+    //如果遍历完成 左边区间还有数没放进辅助数组 那就说明剩下的左边区间数较大 依次cp进辅助
+		help[helpIndex] = a[LIndex]
+		LIndex++
+		helpIndex++
+	}
+	for RIndex &lt;= right { 
+    //如果遍历完成 左边区间还有数没放进辅助数组 那就说明剩下的左边区间数较大 依次cp进辅助
+		help[helpIndex] = a[RIndex]
+		RIndex++
+		helpIndex++
+	}
+	//辅助空间已经排好序 覆盖填回原数组
+	for i := 0; i &lt; helpIndex; i++ {
+		a[left+i] = help[i]
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="时间复杂度-2">时间复杂度</h2>
+
+<p>​   O( NLogN)</p>
+
+<h2 id="算法稳定性-1">算法稳定性</h2>
+
+<p>​   稳定</p>
+
+<h2 id="优化-2">优化</h2>
+
+<h3 id="规模较小的时候-不用归并-改为插排">规模较小的时候 不用归并，改为插排</h3>
+
+<p>​   递归其实非常消耗性能 规模较小的时候可以不再递归 较少递归调用次数</p>
+
+<p><details>
+<summary>MergeSortOpt</summary></p>
+
+<pre><code class="language-go">  func MergeSortOpt(a []int, left int, right int) {
+	//一个数  为空 下标不合法 拆分完成
+	if len(a) &lt; 2 || left &lt; 0 || right &gt; len(a) || left &gt;= right {
+		return
+	}
+	if left+20 &gt;= right {//这里增加几行代码 规模较小 改为插排 
+		InsertSort(a[left : right+1])
+		return
+	}
+	mid := left + (right-left)/2    //数组中间位置
+	MergeSort(a, left, mid)         //左边归并排序
+	MergeSort(a, mid+1, right)      //右边递归排序
+	MergeSlice(a, left, mid, right) //合并2个子序列为大的有序序列
+}
+</code></pre>
+
+<p></details></p>
+
+<h3 id="检查合并前两个数组是否已经有序-没有必要再调用合并了">检查合并前两个数组是否已经有序 没有必要再调用合并了</h3>
+
+<p><details>
+<summary>MergeSortOpt2</summary></p>
+
+<pre><code class="language-go">func MergeSortOpt2(a []int, left int, right int) {
+	//一个数  为空 下标不合法 拆分完成
+	if len(a) &lt; 2 || left &lt; 0 || right &gt; len(a) || left &gt;= right {
+		return
+	}
+	if left+20 &gt;= right {//这里增加几行代码 规模较小 改为插排 
+		InsertSort(a[left : right+1])
+		return
+	}
+	mid := left + (right-left)/2    //数组中间位置
+	MergeSort(a, left, mid)         //左边归并排序
+	MergeSort(a, mid+1, right)      //右边递归排序
+  if a[mid]&lt;=a[mid+1]{//如果2个子序列本身已经有序 无需再合并
+    return
+  }
+	MergeSlice(a, left, mid, right) //合并2个子序列为大的有序序列
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="网搜图解-2">网搜图解</h2>
+
+<p><img src="donate/mergeSort.gif" alt="" /></p>
+
+<h1 id="选择排序">选择排序</h1>
+
+<h2 id="介绍-3">介绍</h2>
+
+<p>​   每轮都选择一个极值(最大或者最小)放到数组的某一端，其实也是分为有序区和无序区，刚开始全是无序区，</p>
+
+<p>第1轮 遍历N个数 挑选极值放到数组最左侧 有序区有1个数</p>
+
+<p>第2轮 遍历剩下的N-1个数，挑选极值放入数组第2个位置，也就是依次放入有序区</p>
+
+<p>&hellip;</p>
+
+<p>直到剩下最后一个元素 这个元素自然是整个数组的极值 整个数组排序完成</p>
+
+<h2 id="代码-3">代码</h2>
+
+<p><details>
+  <summary>SelectSort</summary></p>
+
+<pre><code class="language-go">  func SelectSort(a []int) {
+	if len(a) &lt; 2 { //一个数或者为空 不用排序
+		return
+	}
+	for j := 0; j &lt; len(a)-1; j++ {//控制每轮循环 遍历比较的元素个数
+		min := j	//min记录最小元素下标
+		for i := j + 1; i &lt; len(a); i++ {
+			if a[min] &gt; a[i] {
+				min = i
+			}
+		}
+		a[j], a[min] = a[min], a[j] //将最小元素依次放入有序区
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="时间复杂度-3">时间复杂度</h2>
+
+<p>​   O($N^2$)</p>
+
+<h2 id="算法稳定性-2">算法稳定性</h2>
+
+<p>​   不稳定 会改变两个相等元素本身的相对位置  如 (7) 2 4 8 3 4 [7] 1  第一轮下来(7)会跑到最后</p>
+
+<h2 id="优化-3">优化</h2>
+
+<p>​   修改内层循环，每一轮遍历 不仅找到最小下标 也要找到最大下标 最小放数组左边，最大放数组右边，减少循环次数，当然外层循环条件也要修改，最开始无序区为整个数组 每一轮下来 数组两端2个元素变为有序，有序区从两端往中间扩大，直到所有元素都为有序
+<details>
+<summary>SelectSortOpt</summary></p>
+
+<pre><code class="language-go">func SelectSortOPT(a []int) {
+	if len(a) &lt; 2 { //一个数或者为空 不用排序
+		return
+	}
+  //刚开始left right分别为数组最小和最大下标 每轮循环left和rignt分别放置最小和最大值 
+  //终止条件为left==right 每轮循环后left右移 right左移
+	for left, right := 0, len(a)-1; left &lt; right; left, right = left+1, right-1 {
+		minIndex, maxIndex := left, right
+		for i := left; i &lt;= right; i++ {
+			if a[i] &lt; a[minIndex] { //找到最小值下标
+				minIndex = i
+			}
+			if a[i] &gt; a[maxIndex] { //找到最大值下标
+				maxIndex = i
+			}
+		}
+		a[left], a[minIndex] = a[minIndex], a[left]//最小的放当前无序区最左边
+		if left == maxIndex {
+      //如最大下标就是刚开始的最小下标 因为已经交换到了minIndex位置 所以最大下标也要跟着修改
+			maxIndex = minIndex
+		}
+		a[maxIndex], a[right] = a[right], a[maxIndex]//最大值放到当前无序区最右边
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="网搜图解-3">网搜图解</h2>
+
+<p><img src="donate/SelectSort.gif" alt="" /></p>
+
+<p>​   摘自： <a href="https://www.cnblogs.com/onepixel/p/7674659.html">https://www.cnblogs.com/onepixel/p/7674659.html</a></p>
+
+<h1 id="堆排序">堆排序</h1>
+
+<h2 id="介绍-4">介绍</h2>
+
+<h3 id="二叉堆介绍">二叉堆介绍</h3>
+
+<p>堆排序是借助堆这种数据结构进行排序，又分为最大堆和最小堆。堆也分很多种，这里用二叉堆，下面从网上找到的2张图展示下最大堆和最小堆。</p>
+
+<p><img src="donate/max_min_Heap.jpg" alt="" /></p>
+
+<p>​   最大堆 所有父节点都<strong>&gt;=</strong>两个子节点   最小堆 所有父节点都<strong>&lt;=</strong>两个子节点</p>
+
+<p>​   最大堆 可用于升序排序    最小堆可用于降序排序</p>
+
+<p>​   二叉堆实现方式不止一种，这里选择最简单的数组实现，下图展示二叉堆如何用数组存放以及父子节点关系如何对应到数组下标关系。</p>
+
+<p><img src="donate/heap_imp_array.jpg" alt="" /></p>
+
+<h3 id="堆排序大致过程">堆排序大致过程</h3>
+
+<ul>
+<li><p>首选遍历数组 构建二叉堆(数组实现)</p></li>
+
+<li><p>交换堆头尾两个元素，也就是数组头尾元素，最大值放到了数组最后一个元素。因为根节点发生变化</p></li>
+</ul>
+
+<p>所以重新堆化，范围不包括最后一个元素，最后一个元素相当于已经输出排序完成，为最大值。</p>
+
+<ul>
+<li>对于重新堆化的前面N-1个元素 循环执行第2步 直到输出所有堆节点 完成最终排序</li>
+</ul>
+
+<h2 id="代码-4">代码</h2>
+
+<h3 id="最大堆">最大堆</h3>
+
+<p><details>
+<summary>MaxHeapSort</summary></p>
+
+<pre><code class="language-go">func MaxHeapSort(a []int) {
+  size:=len(a)//数组长度
+	if size &lt; 2 {
+		return
+	}
+	for i := 0; i &lt; len(a); i++ {//遍历数组 构建堆
+		MaxHeapInsert(a, i)
+	}
+	for size &gt; 0 {
+		a[0], a[size-1] = a[size-1], a[0] //将当前堆顶也就是最大值放到最后 把最后的元素换到堆顶 然后重塑堆
+    size--
+		MaxHeapify(a, 0, size)
+	}
+}
+func MaxHeapInsert(a []int, index int) {
+  //如果插入节点大于父节点 则需要向上调整 先跟父节点交换  然后再比较上面的父节点
+	for parentIndex := (index - 1) / 2; a[index] &gt; a[parentIndex]; index, parentIndex = parentIndex, (index-1)/2 { 
+		a[index], a[parentIndex] = a[parentIndex], a[index]
+	}
+}
+//重新堆化
+func MinHeapify(a []int, index int, size int) {
+	for minIndex := -1; minIndex != index; {
+		minIndex = index
+		leftIndex := 2*index + 1
+		rightIndex := 2*index + 2
+		//求当前节点 左孩子 右孩子中最小值对应的下标
+		if leftIndex &lt; size &amp;&amp; a[minIndex] &gt; a[leftIndex] {
+			minIndex = leftIndex
+		}
+		if rightIndex &lt; size &amp;&amp; a[minIndex] &gt; a[rightIndex] {
+			minIndex = rightIndex
+		}
+		if minIndex != index {
+			a[index], a[minIndex] = a[minIndex], a[index] //跟左孩子、右孩子中最小的交换
+			index = minIndex
+			minIndex = -1
+		}
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h3 id="最小堆">最小堆</h3>
+
+<p><details>
+<summary>MinHeapSort</summary></p>
+
+<pre><code class="language-go">func MinHeapSort(a []int) {
+	if len(a) &lt; 2 {
+		return
+	}
+	for i := 0; i &lt; len(a); i++ {
+		MinHeapInsert(a, i)
+	}
+	size := len(a)
+	for size &gt; 0 {
+		a[0], a[size-1] = a[size-1], a[0] //将当前堆顶也就是最大值放到最后 把最后的元素换到堆顶 然后重塑堆
+		size--
+		MinHeapify(a, 0, size)
+	}
+}
+//MinHeapInsert 创建大堆 数组实现  index为要插入的元素下标
+//节点下标为i 对应左孩子为2*i+1 右边孩子为2*i+2
+//节点下标为i 对应父节点为(i-1)/2
+func MinHeapInsert(a []int, index int) {
+	parentIndex := (index - 1) / 2
+	for a[index] &lt; a[parentIndex] { //如果插入节点小于父节点 则需要向上调整 先跟父节点交换  然后再比较上面的父节点
+		a[index], a[parentIndex] = a[parentIndex], a[index]
+		index = parentIndex
+		parentIndex = (index - 1) / 2
+	}
+}
+//MinHeapify 下标index发生了变化 重塑堆 一路向下调整 如果两个孩子中有一个比自己小 则交换 然后继续往下调整找到比自己小的孩子 然后跟其交换
+//节点下标为i 对应左孩子为2*i+1 右边孩子为2*i+2
+//节点下标为i 对应父节点为(i-1)/2
+func MinHeapify(a []int, index int, size int) {
+	for minIndex := -1; minIndex != index; {
+		minIndex = index
+		leftIndex := 2*index + 1
+		rightIndex := 2*index + 2
+		//求当前节点 左孩子 右孩子中最小值对应的下标
+		if leftIndex &lt; size &amp;&amp; a[minIndex] &gt; a[leftIndex] {
+			minIndex = leftIndex
+		}
+		if rightIndex &lt; size &amp;&amp; a[minIndex] &gt; a[rightIndex] {
+			minIndex = rightIndex
+		}
+		if minIndex != index {
+			a[index], a[minIndex] = a[minIndex], a[index] //跟左孩子、右孩子中最小的交换
+			index = minIndex
+			minIndex = -1
+		}
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+<h2 id="优化-4">优化</h2>
+
+<p><details>
+  <summary>堆排序优化</summary></p>
+
+<pre><code class="language-go">  func MergeSortDown2Up(a []int, left int, right int) {
+	//一个数  为空 下标不合法 拆分完成
+	if len(a) &lt; 2 || left &lt; 0 || right &gt; len(a) || left &gt;= right {
+		return
+	}
+	for time := 1; time &lt;= right; time = time * 2 {
+		MergeGroup(a, right, time)
+	}
+}
+</code></pre>
+
+<p></details></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="http://heketong.github.io/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="排序_数据结构与算法" target="_blank" rel="external">http://heketong.github.io/2020/05/%E6%8E%92%E5%BA%8F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="http://heketong.github.io/" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="http://heketong.github.io/donate/heketong_profile_photo.JPG" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="http://heketong.github.io/" target="_blank"><span class="text-dark">heketong</span><small class="ml-1x">程序猿</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+    <div id="vcomments"></div>
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="http://heketong.github.io/about/" title="关于我"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="http://heketong.github.io/2020/05/test/"
+                    title="test"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>赏</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>感谢您的支持,我会继续努力的!</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="http://heketong.github.io/donate/alipayimg.JPG"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦~</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="http://heketong.github.io/donate/wechatpayimg.JPG"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    微信支付</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/heketong" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="http://heketong.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2017  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="http://heketong.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="http://heketong.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'http:\/\/heketong.github.io\/',
+            CONTENT_URL: 'http:\/\/heketong.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="http://heketong.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine"></script>
+<script type="text/javascript">
+    var GUEST = ['nick', 'mail', 'link'];
+    var meta = 'nick,mail';
+    meta = meta.split(',').filter(function (item) {
+        return GUEST.indexOf(item) > -1;
+    });
+    new Valine({
+        el: '#vcomments',
+        verify: false ,
+        notify: false ,
+        appId: 'xfxc700kYXL3vztqm2c9lhrY-gzGzoHsz',
+        appKey: 'xHCJh785XY3zd7jXyi4Uo3dk',
+        placeholder: '说点什么吧...',
+        avatar: 'mm',
+        meta: meta,
+        pageSize: '10' || 10,
+        visitor: true 
+});
+</script>
+
+  </body>
+</html>
